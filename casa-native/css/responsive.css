@@ -1,0 +1,203 @@
+/* ==========================================================================
+   CASA NATIVE — responsive.css
+   Breakpoints definidos pelo conteúdo (desktop-first a partir do layout
+   editorial): 1200 · 1024 · 900 · 720 · 560 · 380
+   ========================================================================== */
+
+/* Monitores grandes: um pouco mais de respiro, sem esticar o conteúdo */
+@media (min-width: 1680px) {
+  :root { --container: 1440px; }
+}
+
+/* ≤ 1200 ---------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .story__stamp { right: -24px; }
+  .signature__badge { left: -24px; }
+  .footer__top { grid-template-columns: 1fr 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+}
+
+/* ≤ 1024 — tablet paisagem -------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .nav__links { gap: 22px; }
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .products--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pillar { min-height: 300px; }
+  .story__media-wrap { grid-column: 1 / span 6; }
+  .story__content { grid-column: 7 / span 6; }
+  .ambiance__content { grid-column: 1 / span 7; }
+  .ambiance__stage { grid-column: 8 / span 5; }
+  .faq__head { grid-column: 1 / -1; }
+  .accordion { grid-column: 1 / -1; }
+}
+
+/* ≤ 900 — tablet retrato / navegação mobile ---------------------------------------- */
+@media (max-width: 900px) {
+  :root { --nav-h: 72px; --nav-h-compact: 64px; }
+
+  .nav__links, .nav__cta { display: none; }
+  .nav__toggle { display: block; }
+
+  .section-head--split { flex-direction: column; align-items: flex-start; gap: 24px; }
+
+  .hero__content { padding-bottom: 140px; }
+  .hero__meta { justify-content: flex-start; left: var(--gutter); right: auto; bottom: 88px; padding: 0; width: auto; gap: 28px; }
+  .hero__veil {
+    background:
+      linear-gradient(0deg, rgba(23, 22, 20, .9) 0%, rgba(23, 22, 20, .45) 55%, rgba(23, 22, 20, .55) 100%);
+  }
+
+  .manifesto__item:nth-child(2), .manifesto__item:nth-child(3) { padding-left: 0; }
+
+  .story__grid, .signature__grid, .ambiance__grid, .location__grid { grid-template-columns: 1fr; gap: 56px; }
+  .story__media-wrap, .story__content,
+  .signature__content, .signature__visual,
+  .ambiance__content, .ambiance__stage,
+  .location__map, .location__info { grid-column: auto; }
+
+  .story { padding-top: 0; }
+  .story__media-wrap { max-width: 560px; }
+  .story__stamp { right: 16px; bottom: -40px; width: 112px; height: 112px; }
+  .story__stamp strong { font-size: 1.7rem; }
+  .story__content { padding-top: 24px; }
+
+  .pillars { grid-template-columns: 1fr; }
+  .pillar { min-height: 0; border-right: 0; border-bottom: 1px solid var(--color-line); padding: 36px 8px 48px; grid-template-columns: 56px 1fr; column-gap: 20px; row-gap: 8px; }
+  .pillar__icon { grid-column: 1; grid-row: 1 / span 3; margin: 0; width: 48px; height: 48px; }
+  .pillar__num { grid-column: 2; grid-row: 1; }
+  .pillar__title { grid-column: 2; grid-row: 2; }
+  .pillar__text { grid-column: 2; grid-row: 3; }
+  .pillar:hover, .pillar:focus-visible { transform: none; box-shadow: none; }
+  .pillar__line { left: 8px; right: 8px; }
+
+  .signature__visual { order: -1; max-width: 560px; width: 100%; margin-inline: auto; }
+  .signature__badge { left: auto; right: -8px; bottom: -32px; width: 120px; height: 120px; }
+  .signature__ring { display: none; }
+
+  .gallery__grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: clamp(200px, 42vw, 360px);
+  }
+  .gallery__item--a { grid-column: 1 / 4; grid-row: span 2; }
+  .gallery__item--b { grid-column: 4 / 7; grid-row: span 1; margin-top: 0; }
+  .gallery__item--c { grid-column: 4 / 7; grid-row: span 1; }
+  .gallery__item--d { grid-column: 1 / 4; grid-row: span 2; }
+  .gallery__item--e { grid-column: 4 / 7; grid-row: span 1; }
+  .gallery__item--f { grid-column: 4 / 7; grid-row: span 1; }
+
+  .ambiance__stage { max-width: 560px; }
+  .ambiance__media { aspect-ratio: 4 / 3; }
+
+  .location__map { order: 2; }
+
+  .footer__top { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+
+  .modal--product .modal__panel { grid-template-columns: 1fr; width: min(560px, 94vw); }
+  .modal__media { border-radius: var(--radius-lg) var(--radius-lg) 0 0; min-height: 0; aspect-ratio: 16 / 10; height: auto; }
+  .modal__price { margin: 24px 0; padding-top: 0; }
+}
+
+/* ≤ 720 — celulares grandes ---------------------------------------------------------- */
+@media (max-width: 720px) {
+  .hero__actions { flex-direction: column; align-items: stretch; max-width: 360px; }
+  .hero__actions .btn { width: 100%; }
+  .scroll-cue { bottom: 32px; }
+
+  .timeline { grid-template-columns: 1fr; border-top: 0; border-left: 1px solid var(--color-line); margin-left: 4px; }
+  .timeline__item { padding: 0 0 28px 28px; grid-template-columns: 80px 1fr; align-items: baseline; }
+  .timeline__item::before { top: 10px; left: -5px; }
+
+  .exp-card { width: 78vw; }
+  .exp-card:nth-of-type(even) { margin-top: 0; }
+  .exp-card__sep { display: none; }
+  .exp-end { width: 70vw; padding-right: var(--gutter); }
+  .experience__progress { display: none; }
+
+  .tabs__list {
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: var(--radius-md);
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+  .tabs__list.is-scrolled-end { -webkit-mask-image: none; mask-image: none; }
+  .tabs__tab { padding: 12px 18px; }
+  .tabs__indicator { border-radius: var(--radius-sm); }
+  .tabs__tab { border-radius: var(--radius-sm); }
+
+  .products, .products--3 { grid-template-columns: 1fr; gap: 12px; }
+  .product { flex-direction: row; align-items: center; gap: 16px; padding: 10px; }
+  .product__media { width: 104px; flex: none; }
+  .product__body { padding: 0; }
+  .product__name { font-size: 1.15rem; }
+  .product__desc { font-size: .82rem; }
+  .product__foot { flex-direction: column; align-items: flex-end; gap: 10px; margin: 0 6px 0 0; padding: 0; border: 0; }
+  .product__price { white-space: nowrap; }
+
+  .menu__footer { flex-direction: column; }
+  .menu__footer .btn { width: 100%; }
+
+  .signature__buy { flex-direction: column; align-items: flex-start; }
+  .signature__buy .btn { width: 100%; }
+
+  .stay__content { padding-bottom: 72px; }
+
+  .ambiance__item { grid-template-columns: 44px 1fr; gap: 16px; padding: 22px 0; }
+  .ambiance__icon { width: 44px; height: 44px; }
+  .ambiance__num { display: none; }
+
+  .carousel-controls { display: none; }
+  .quote-card { width: 84vw; min-height: 280px; }
+
+  .accordion__inner p { padding-right: 0; }
+
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; align-items: flex-start; }
+
+  .final-cta__actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 360px; }
+
+  .lightbox__figure { padding-inline: 12px; }
+  .lightbox__nav { top: auto; bottom: 24px; margin-top: 0; }
+  .lightbox__img { max-height: calc(100dvh - 200px); }
+
+  /* Modal de produto vira bottom sheet */
+  .modal--product { margin: auto auto 0; width: 100%; }
+  .modal--product .modal__panel { width: 100%; max-height: 92dvh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+  .modal--product[open] .modal__panel { animation-name: sheet-in; }
+  .modal--product.is-closing .modal__panel { animation-name: sheet-out; }
+  .toast { bottom: 96px; }
+}
+@keyframes sheet-in { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes sheet-out { to { transform: translateY(100%); } }
+
+/* ≤ 560 — celulares ------------------------------------------------------------------------ */
+@media (max-width: 560px) {
+  .hero__title { font-size: clamp(2.6rem, 11.5vw, 3.4rem); }
+  .hero__meta { display: none; }
+  .hero__content { padding-bottom: 110px; }
+
+  .gallery__grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 46vw; }
+  .gallery__item--a, .gallery__item--d { grid-column: 1 / 2; grid-row: span 2; }
+  .gallery__item--b, .gallery__item--c, .gallery__item--e, .gallery__item--f { grid-column: 2 / 3; }
+  .gallery__caption { font-size: 1rem; padding: 32px 14px 12px; }
+
+  .insta-grid { gap: 6px; }
+  .insta-tile { border-radius: var(--radius-sm); }
+
+  .hours__row { flex-direction: column; gap: 4px; }
+  .hours__row dt { align-self: flex-start; }
+}
+
+/* ≤ 380 — celulares pequenos ---------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .brand__native { font-size: 1.15rem; }
+  .product__media { width: 84px; }
+  .btn { padding: 0 20px; letter-spacing: .16em; }
+}
+
+/* Telas baixas em paisagem (ex.: celular deitado) */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: 560px; }
+  .hero__meta { display: none; }
+}

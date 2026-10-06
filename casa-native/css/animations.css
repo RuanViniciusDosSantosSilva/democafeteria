@@ -1,0 +1,197 @@
+/* ==========================================================================
+   CASA NATIVE — animations.css
+   Estados de entrada, keyframes e movimento. Tudo baseado em transform/opacity.
+   As classes de estado (.is-revealed, .is-loaded...) são aplicadas via JS;
+   sem JS (html.no-js) o conteúdo aparece normalmente.
+   ========================================================================== */
+
+/* Loader -------------------------------------------------------------------- */
+.loader__stroke {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1s var(--ease-in-out) .1s forwards;
+}
+.loader__fill { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; }
+.loader__fill--diag { animation: fade-up .7s var(--ease-out) .45s forwards; }
+.loader__fill--leaf-a { transform-origin: 0% 100%; animation: leaf-in .8s var(--ease-out) .75s forwards; }
+.loader__fill--leaf-b { transform-origin: 100% 100%; animation: leaf-in .8s var(--ease-out) .9s forwards; }
+.loader__line > span { transform: translateY(110%); animation: rise .9s var(--ease-out) forwards; }
+.loader__line:first-child > span { animation-delay: .55s; }
+.loader__line--lg > span { animation-delay: .65s; }
+.loader__tagline { opacity: 0; animation: fade .8s var(--ease-out) .95s forwards; }
+.loader__progress::after { animation: progress 1.4s var(--ease-in-out) .1s forwards; }
+
+/* Saída do loader: cortina sobe */
+.loader.is-done {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1s var(--ease-in-out);
+}
+.loader.is-done .loader__inner { opacity: 0; transform: translateY(-24px); transition: opacity .5s var(--ease-out), transform .8s var(--ease-out); }
+.loader.is-gone { display: none; }
+
+/* Visita repetida na mesma sessão: entrada encurtada */
+html.is-returning .loader__stroke,
+html.is-returning .loader__fill,
+html.is-returning .loader__line > span,
+html.is-returning .loader__tagline,
+html.is-returning .loader__progress::after { animation-duration: .01ms; animation-delay: 0s; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade { to { opacity: 1; } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes leaf-in { from { opacity: 0; transform: scale(.4) rotate(-12deg); } to { opacity: 1; transform: none; } }
+@keyframes rise { to { transform: none; } }
+@keyframes progress { to { transform: scaleX(1); } }
+
+/* Hero: entrada orquestrada --------------------------------------------------- */
+html.js .hero__symbol,
+html.js .hero__label,
+html.js .hero__description,
+html.js .hero__actions,
+html.js .hero__meta,
+html.js .scroll-cue { opacity: 0; transform: translateY(20px); }
+html.js .hero__title .line__inner { transform: translateY(105%); }
+html.js .hero__image { --hero-scale: 1.14; }
+
+html.js body.is-loaded .hero__symbol,
+html.js body.is-loaded .hero__label,
+html.js body.is-loaded .hero__description,
+html.js body.is-loaded .hero__actions,
+html.js body.is-loaded .hero__meta,
+html.js body.is-loaded .scroll-cue {
+  opacity: 1;
+  transform: none;
+  transition: opacity 1s var(--ease-out), transform 1.1s var(--ease-out);
+}
+html.js body.is-loaded .hero__symbol { transition-delay: .05s; }
+html.js body.is-loaded .hero__label { transition-delay: .2s; }
+html.js body.is-loaded .hero__title .line__inner { transform: none; transition: transform 1.2s var(--ease-out); }
+html.js body.is-loaded .hero__title .line:nth-child(1) .line__inner { transition-delay: .3s; }
+html.js body.is-loaded .hero__title .line:nth-child(2) .line__inner { transition-delay: .42s; }
+html.js body.is-loaded .hero__description { transition-delay: .7s; }
+html.js body.is-loaded .hero__actions { transition-delay: .85s; }
+html.js body.is-loaded .hero__meta { transition-delay: 1.1s; }
+html.js body.is-loaded .scroll-cue { transition-delay: 1.2s; }
+html.js body.is-loaded .hero__image { --hero-scale: 1; transition: transform 2.4s var(--ease-out); }
+/* depois da entrada, o JS assume o transform (parallax) sem transição */
+html.js body.is-settled .hero__image { transition: none; }
+
+.site-header { animation: header-in 1s var(--ease-out) both; animation-play-state: paused; }
+body.is-loaded .site-header { animation-play-state: running; animation-delay: .5s; }
+html.no-js .site-header { animation: none; }
+@keyframes header-in { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+
+/* Indicador de scroll */
+.scroll-cue__line::after { animation: cue 2.4s var(--ease-in-out) infinite; }
+@keyframes cue {
+  0% { transform: translateX(-100%); }
+  55% { transform: translateX(0); }
+  100% { transform: translateX(101%); }
+}
+.scroll-cue:hover .scroll-cue__text { color: var(--color-bone); }
+
+/* Reveal ao rolar ----------------------------------------------------------------- */
+html.js [data-reveal]:not([data-reveal="clip"]) {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s var(--ease-out), transform 1.1s var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 1ms);
+}
+html.js [data-reveal].is-revealed:not([data-reveal="clip"]) { opacity: 1; transform: none; }
+
+/* Revelação por máscara (imagens) */
+html.js [data-reveal="clip"] {
+  clip-path: inset(100% 0 0 0 round var(--radius-md));
+  transition: clip-path 1.3s var(--ease-in-out);
+  transition-delay: calc(var(--d, 0) * 1ms);
+}
+html.js [data-reveal="clip"] img { scale: 1.18; transition: scale 1.8s var(--ease-out); transition-delay: calc(var(--d, 0) * 1ms); }
+html.js [data-reveal="clip"].is-revealed { clip-path: inset(0 0 0 0 round var(--radius-md)); }
+html.js [data-reveal="clip"].is-revealed img { scale: 1; }
+
+/* Text reveal por palavra (data-split) */
+.word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .16em; margin-bottom: -.16em; }
+.word__inner { display: inline-block; }
+html.js [data-split] .word__inner {
+  transform: translateY(108%);
+  transition: transform 1.1s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 55ms);
+}
+html.js [data-split].is-revealed .word__inner { transform: none; }
+
+/* Menu mobile ------------------------------------------------------------------------ */
+.mobile-menu { clip-path: inset(0 0 100% 0); transition: clip-path .7s var(--ease-in-out); }
+.mobile-menu.is-open { clip-path: inset(0 0 0 0); }
+.mobile-menu__links li { opacity: 0; transform: translateY(24px); transition: opacity .6s var(--ease-out), transform .7s var(--ease-out); }
+.mobile-menu.is-open .mobile-menu__links li { opacity: 1; transform: none; }
+.mobile-menu.is-open .mobile-menu__links li:nth-child(1) { transition-delay: .2s; }
+.mobile-menu.is-open .mobile-menu__links li:nth-child(2) { transition-delay: .26s; }
+.mobile-menu.is-open .mobile-menu__links li:nth-child(3) { transition-delay: .32s; }
+.mobile-menu.is-open .mobile-menu__links li:nth-child(4) { transition-delay: .38s; }
+.mobile-menu.is-open .mobile-menu__links li:nth-child(5) { transition-delay: .44s; }
+.mobile-menu__footer { opacity: 0; transition: opacity .6s var(--ease-out); }
+.mobile-menu.is-open .mobile-menu__footer { opacity: 1; transition-delay: .5s; }
+.mobile-menu__links a { transition: color var(--dur) var(--ease-out), padding var(--dur) var(--ease-out); }
+.mobile-menu__links a:hover { color: var(--color-caramel-soft); padding-left: 8px; }
+
+/* Abas do cardápio ------------------------------------------------------------------- */
+.tabs__panel.is-leaving { opacity: 0; transform: translateY(12px); transition: opacity .25s var(--ease-out), transform .25s var(--ease-out); }
+.tabs__panel.is-entering .products > li {
+  animation: card-in .7s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+@keyframes card-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* Modais ---------------------------------------------------------------------------------- */
+dialog[open] .modal__panel { animation: modal-in .6s var(--ease-out) both; }
+dialog[open]::backdrop { animation: fade .4s var(--ease-out) both; }
+dialog.is-closing .modal__panel { animation: modal-out .3s var(--ease-in-out) both; }
+dialog.is-closing::backdrop { animation: fade-out .3s var(--ease-in-out) both; }
+@keyframes modal-in { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes modal-out { to { opacity: 0; transform: translateY(16px) scale(.98); } }
+@keyframes fade-out { to { opacity: 0; } }
+
+.lightbox[open] .lightbox__inner { animation: fade .4s var(--ease-out) both; }
+.lightbox.is-closing .lightbox__inner { animation: fade-out .3s var(--ease-out) both; }
+.lightbox__img { transition: opacity .35s var(--ease-out), transform .5s var(--ease-out); }
+.lightbox__img.is-swapping { opacity: 0; transform: translateX(calc(var(--dir, 1) * 24px)); }
+
+/* Mapa: pulso do pin */
+.map__pulse { animation: pulse 2.6s var(--ease-out) infinite; }
+@keyframes pulse { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(2.6); opacity: 0; } }
+
+/* Botão magnético: o JS define --mx/--my */
+[data-magnetic] { translate: var(--mx, 0) var(--my, 0); transition: translate .6s var(--ease-out), color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
+[data-magnetic].is-attracted { transition: translate .15s linear, color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out); }
+
+/* Parallax: o JS escreve --py */
+[data-parallax] { translate: 0 var(--py, 0); will-change: translate; }
+
+/* ===========================================================================
+   REDUCED MOTION — remove parallax, scroll-linked, cursor e movimentos
+   não essenciais. Mantém apenas mudanças de opacidade curtas.
+   =========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  html.js [data-reveal], html.js [data-reveal="clip"], html.js [data-split] .word__inner,
+  html.js .hero__symbol, html.js .hero__label, html.js .hero__description,
+  html.js .hero__actions, html.js .hero__meta, html.js .scroll-cue,
+  html.js .hero__title .line__inner {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+  html.js [data-reveal="clip"] img, html.js .hero__image { scale: 1 !important; --hero-scale: 1 !important; }
+  [data-parallax] { translate: none !important; }
+  [data-magnetic] { translate: none !important; }
+  .manifesto__item { --p: 1 !important; }
+  .loader { display: none !important; }
+  .scroll-cue__line::after { transform: none; }
+}

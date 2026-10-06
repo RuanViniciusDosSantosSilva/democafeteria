@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa Native — Café, Brunch &amp; Confeitaria</title>
+  <meta name="description" content="Descubra a Casa Native, um espaço para cafés especiais, brunch artesanal e momentos sem pressa na Vila Madalena, São Paulo.">
+  <meta name="theme-color" content="#171614">
+  <meta name="author" content="Pietro Rezende">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Casa Native — Café, Brunch &amp; Confeitaria">
+  <meta property="og:description" content="Café artesanal, brunch feito na hora e um espaço pensado para você ficar. Projeto conceitual de portfólio.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+
+  <link rel="preload" as="image" href="assets/images/hero.webp" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+  <!-- Dados estruturados: o projeto é descrito como obra conceitual, não como empresa real -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Casa Native — Café, Brunch & Confeitaria",
+    "description": "Projeto conceitual fictício de website para uma cafeteria, desenvolvido para demonstração de portfólio.",
+    "inLanguage": "pt-BR",
+    "genre": "Web design / Front-end",
+    "author": { "@type": "Person", "name": "Pietro Rezende" },
+    "keywords": "café, brunch, confeitaria, web design, front-end, portfólio"
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Sprite de símbolos SVG (logo + ícones) -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <mask id="cn-leaf-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="520" height="460">
+        <rect width="520" height="460" fill="#fff"/>
+        <path d="M404 226 C418 186 430 148 446 96" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M212 274 C228 318 244 352 262 386" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+      </mask>
+      <symbol id="cn-symbol" viewBox="60 40 420 384">
+        <path d="M84 76 C110 62 138 58 160 64 L160 334 C160 380 128 402 80 410" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+        <path fill="currentColor" d="M146 60 Q192 54 218 72 L410 358 Q428 390 470 408 L402 408 Q380 398 366 378 L174 96 Q164 72 146 60 Z"/>
+        <g mask="url(#cn-leaf-cut)" fill="currentColor">
+          <path d="M398 244 C358 204 368 112 460 60 C476 150 448 216 398 244 Z"/>
+          <path d="M270 408 C204 386 176 302 200 252 C262 270 302 352 270 408 Z"/>
+        </g>
+      </symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19 14 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M15 27l7 7 15-16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.2-4A8 8 0 1 1 8 18.8L4 20Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.2 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.7l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.2.5-.2.7-.1l1.4.6c.3.1.4.3.4.5v.5c0 .2 0 .5-.4.7-.5.3-1.3.5-2.4.1-1.9-.7-3.4-2.2-4.1-4.1-.4-1.1-.2-1.9.1-2.4Z" fill="currentColor"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="i-bean" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="12" ry="17" transform="rotate(28 24 24)" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M19 10c6 6 4 11 0 15s-5 10 2 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-pour" viewBox="0 0 48 48"><path d="M10 28h22v4a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8v-4Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M32 30h3a3 3 0 0 1 0 6h-3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M17 22c-2-3 2-5 0-8M23 22c-2-3 2-5 0-8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-hourglass" viewBox="0 0 48 48"><circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M24 14v10l7 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="5" y="5.5" width="14" height="10" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 18.5h18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 6.5h10a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M17 9.5h2a2 2 0 0 1 2 2v4l-2-1.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+      <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 10h11v4a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5v-4Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 11.5h1.5a2 2 0 0 1 0 4H16M9 4.5c-1 1.2 1 2 0 3.3M12 4.5c-1 1.2 1 2 0 3.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5c.6 4.4 2.1 5.9 6.5 6.5-4.4.6-5.9 2.1-6.5 6.5-.6-4.4-2.1-5.9-6.5-6.5 4.4-.6 5.9-2.1 6.5-6.5Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M18.5 16.5v4M16.5 18.5h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- 01 — LOADING -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <svg class="loader__symbol" viewBox="60 40 420 384">
+        <path class="loader__stroke" d="M84 76 C110 62 138 58 160 64 L160 334 C160 380 128 402 80 410" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" pathLength="1"/>
+        <path class="loader__fill loader__fill--diag" fill="currentColor" d="M146 60 Q192 54 218 72 L410 358 Q428 390 470 408 L402 408 Q380 398 366 378 L174 96 Q164 72 146 60 Z"/>
+        <g mask="url(#cn-leaf-cut)" fill="currentColor">
+          <path class="loader__fill loader__fill--leaf-a" d="M398 244 C358 204 368 112 460 60 C476 150 448 216 398 244 Z"/>
+          <path class="loader__fill loader__fill--leaf-b" d="M270 408 C204 386 176 302 200 252 C262 270 302 352 270 408 Z"/>
+        </g>
+      </svg>
+      <p class="loader__wordmark">
+        <span class="loader__line"><span>Casa</span></span>
+        <span class="loader__line loader__line--lg"><span>Native</span></span>
+      </p>
+      <p class="loader__tagline">Café • Brunch • Confeitaria</p>
+      <span class="loader__progress"></span>
+    </div>
+  </div>
+
+  <!-- Cursor personalizado (somente desktop com ponteiro fino) -->
+  <div class="cursor is-hidden" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__dot"></div>
+  </div>
+  <div class="cursor-label" aria-hidden="true">View <svg><use href="#i-arrow"/></svg></div>
+
+  <!-- 02 — NAVBAR -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Casa Native — voltar ao início">
+        <svg class="brand__symbol" aria-hidden="true"><use href="#cn-symbol"/></svg>
+        <span class="brand__text">
+          <span class="brand__casa">Casa</span>
+          <span class="brand__native">Native</span>
+        </span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a class="nav__link" href="#experiencia">Experiência</a></li>
+        <li><a class="nav__link" href="#cardapio">Cardápio</a></li>
+        <li><a class="nav__link" href="#sobre">Sobre</a></li>
+        <li><a class="nav__link" href="#galeria">Galeria</a></li>
+        <li><a class="nav__link" href="#localizacao">Visite</a></li>
+      </ul>
+
+      <a class="btn btn--outline btn--sm nav__cta" href="#localizacao" data-magnetic>
+        <span class="btn__label">Como chegar</span>
+        <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="mobile-menu__inner container">
+      <ol class="mobile-menu__links" role="list">
+        <li><a href="#experiencia"><span class="mobile-menu__num">01</span>Experiência</a></li>
+        <li><a href="#cardapio"><span class="mobile-menu__num">02</span>Cardápio</a></li>
+        <li><a href="#sobre"><span class="mobile-menu__num">03</span>Sobre</a></li>
+        <li><a href="#galeria"><span class="mobile-menu__num">04</span>Galeria</a></li>
+        <li><a href="#localizacao"><span class="mobile-menu__num">05</span>Visite</a></li>
+      </ol>
+      <div class="mobile-menu__footer">
+        <a class="btn btn--accent btn--block" href="#localizacao">
+          <span class="btn__label">Como chegar</span>
+          <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+        <p class="mobile-menu__info">Rua das Flores, 247 — Vila Madalena<br>Seg–Sex 08h–20h · Sáb–Dom 08h–22h</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="conteudo">
+
+    <!-- 03 — HERO -->
+    <section class="hero" id="inicio" data-nav-theme="dark" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img class="hero__image" src="assets/images/hero.webp" alt="Xícara de café sobre mesa de madeira em um salão iluminado por luz natural" width="2400" height="1500" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <svg class="hero__symbol" aria-hidden="true"><use href="#cn-symbol"/></svg>
+        <p class="label hero__label">Café • Brunch • Confeitaria</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span class="line__inner">Seu tempo merece</span></span>
+          <span class="line"><span class="line__inner">um café <em>especial.</em></span></span>
+        </h1>
+        <p class="hero__description">Café artesanal, brunch feito na hora e um espaço pensado para você ficar.</p>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="#cardapio">
+            <span class="btn__label">Explorar cardápio</span>
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--outline btn--on-dark" href="#localizacao" data-magnetic>
+            <span class="btn__label">Como chegar</span>
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero__meta container" aria-label="Informações rápidas">
+        <p><span class="hero__meta-k">Vila Madalena</span> São Paulo/SP</p>
+        <p><span class="hero__meta-k">Hoje</span> <span data-open-status>08h — 20h</span></p>
+      </aside>
+
+      <a class="scroll-cue" href="#manifesto" aria-label="Rolar para a próxima seção">
+        <span class="scroll-cue__text">Scroll</span>
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- 04 — FRASES DE IMPACTO -->
+    <section class="manifesto" id="manifesto" data-nav-theme="light" aria-label="Manifesto da casa">
+      <div class="manifesto__inner container">
+        <p class="manifesto__index label">Manifesto</p>
+        <ul class="manifesto__list" role="list">
+          <li class="manifesto__item" data-manifesto>
+            <span class="manifesto__num">01</span>
+            <span class="manifesto__text">Feito com <em>calma.</em></span>
+            <span class="manifesto__rule" aria-hidden="true"></span>
+          </li>
+          <li class="manifesto__item" data-manifesto>
+            <span class="manifesto__num">02</span>
+            <span class="manifesto__text">Servido com <em>intenção.</em></span>
+            <span class="manifesto__rule" aria-hidden="true"></span>
+          </li>
+          <li class="manifesto__item" data-manifesto>
+            <span class="manifesto__num">03</span>
+            <span class="manifesto__text">Vivido sem <em>pressa.</em></span>
+            <span class="manifesto__rule" aria-hidden="true"></span>
+          </li>
+        </ul>
+        <svg class="manifesto__leaf manifesto__leaf--a" aria-hidden="true"><use href="#i-leaf"/></svg>
+        <svg class="manifesto__leaf manifesto__leaf--b" aria-hidden="true"><use href="#i-leaf"/></svg>
+      </div>
+    </section>
+
+    <!-- 05 — NOSSA HISTÓRIA -->
+    <section class="story section" id="sobre" data-nav-theme="light" aria-labelledby="story-title">
+      <div class="story__grid container">
+        <div class="story__media-wrap">
+          <figure class="media media--4x5 story__media" data-reveal="clip">
+            <img src="assets/images/story.webp" alt="Barista preparando café coado com chaleira de bico fino no balcão" width="1200" height="1500" loading="lazy" decoding="async" data-parallax="-0.06">
+          </figure>
+          <p class="story__stamp" aria-hidden="true" data-reveal>
+            <span>Desde</span>
+            <strong>2019</strong>
+          </p>
+        </div>
+
+        <div class="story__content">
+          <p class="label" data-reveal>A Casa</p>
+          <h2 class="heading story__title" id="story-title" data-split>Não criamos apenas um café.</h2>
+          <p class="story__subtitle" data-reveal>Criamos um lugar para desacelerar.</p>
+          <div class="story__text" data-reveal>
+            <p>A Casa Native nasceu de uma ideia simples: transformar uma pausa cotidiana em uma experiência.</p>
+            <p>Café preparado com atenção, ingredientes escolhidos cuidadosamente e um espaço pensado para fazer você ficar mais um pouco.</p>
+          </div>
+
+          <ol class="timeline" role="list">
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__year">2019</span>
+              <span class="timeline__desc">Nasce a ideia</span>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__year">2021</span>
+              <span class="timeline__desc">Primeira Casa</span>
+            </li>
+            <li class="timeline__item timeline__item--now" data-reveal>
+              <span class="timeline__year">Hoje</span>
+              <span class="timeline__desc">Um lugar para desacelerar</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — THE NATIVE EXPERIENCE (scroll horizontal) -->
+    <section class="experience" id="experiencia" data-nav-theme="dark" aria-labelledby="experience-title">
+      <div class="experience__sticky">
+        <header class="experience__header container">
+          <div>
+            <p class="label label--light">The Native Experience</p>
+            <h2 class="heading experience__title" id="experience-title" data-split>A experiência Native</h2>
+          </div>
+          <div class="experience__progress" aria-hidden="true">
+            <span class="experience__count"><span data-exp-current>01</span> / 04</span>
+            <span class="experience__bar"><span class="experience__bar-fill"></span></span>
+          </div>
+        </header>
+
+        <div class="experience__viewport" tabindex="0" aria-label="Etapas da experiência — role para avançar">
+          <ol class="experience__track" role="list">
+            <li class="exp-card">
+              <figure class="media media--4x5 exp-card__media">
+                <img src="assets/images/coffee.webp" alt="Café coado pingando em jarra de vidro, com grãos sobre a mesa de madeira" width="1200" height="1500" loading="lazy" decoding="async">
+              </figure>
+              <div class="exp-card__body">
+                <span class="exp-card__num">01</span>
+                <h3 class="exp-card__title">Café</h3>
+                <p class="exp-card__text">Comece devagar.</p>
+              </div>
+            </li>
+            <li class="exp-card__sep" aria-hidden="true"><svg><use href="#i-arrow"/></svg></li>
+            <li class="exp-card">
+              <figure class="media media--4x5 exp-card__media">
+                <img src="assets/images/brunch.webp" alt="Torrada com ovos pochê, avocado, frutas e café sobre mesa de madeira" width="1200" height="1500" loading="lazy" decoding="async">
+              </figure>
+              <div class="exp-card__body">
+                <span class="exp-card__num">02</span>
+                <h3 class="exp-card__title">Brunch</h3>
+                <p class="exp-card__text">Fique mais um pouco.</p>
+              </div>
+            </li>
+            <li class="exp-card__sep" aria-hidden="true"><svg><use href="#i-arrow"/></svg></li>
+            <li class="exp-card">
+              <figure class="media media--4x5 exp-card__media">
+                <img src="assets/images/conversation.webp" alt="Duas amigas rindo e conversando à mesa junto à janela, com xícaras de café" width="1200" height="1500" loading="lazy" decoding="async">
+              </figure>
+              <div class="exp-card__body">
+                <span class="exp-card__num">03</span>
+                <h3 class="exp-card__title">Conversa</h3>
+                <p class="exp-card__text">Compartilhe o momento.</p>
+              </div>
+            </li>
+            <li class="exp-card__sep" aria-hidden="true"><svg><use href="#i-arrow"/></svg></li>
+            <li class="exp-card">
+              <figure class="media media--4x5 exp-card__media">
+                <img src="assets/images/moment.webp" alt="Mulher segurando uma xícara e olhando pela janela, com um livro sobre a mesa" width="1200" height="1500" loading="lazy" decoding="async">
+              </figure>
+              <div class="exp-card__body">
+                <span class="exp-card__num">04</span>
+                <h3 class="exp-card__title">Momento</h3>
+                <p class="exp-card__text">Aproveite sem pressa.</p>
+              </div>
+            </li>
+            <li class="exp-end" aria-hidden="true">
+              <svg class="exp-end__symbol"><use href="#cn-symbol"/></svg>
+              <p class="exp-end__text">Mais que café,<br><em>é um momento.</em></p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — FILOSOFIA -->
+    <section class="philosophy section" data-nav-theme="light" aria-labelledby="philosophy-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="label" data-reveal>Filosofia do café</p>
+            <h2 class="heading" id="philosophy-title" data-split>O café importa.</h2>
+          </div>
+          <p class="section-head__aside" data-reveal>Mas o que acontece ao redor dele também.</p>
+        </header>
+
+        <ul class="pillars" role="list">
+          <li class="pillar" data-reveal tabindex="0">
+            <span class="pillar__num">I</span>
+            <svg class="pillar__icon" aria-hidden="true"><use href="#i-bean"/></svg>
+            <h3 class="pillar__title">Origem</h3>
+            <p class="pillar__text">Grãos selecionados para valorizar cada xícara.</p>
+            <span class="pillar__line" aria-hidden="true"></span>
+          </li>
+          <li class="pillar" data-reveal tabindex="0">
+            <span class="pillar__num">II</span>
+            <svg class="pillar__icon" aria-hidden="true"><use href="#i-pour"/></svg>
+            <h3 class="pillar__title">Preparo</h3>
+            <p class="pillar__text">Cada método respeitado para extrair o melhor de cada grão.</p>
+            <span class="pillar__line" aria-hidden="true"></span>
+          </li>
+          <li class="pillar" data-reveal tabindex="0">
+            <span class="pillar__num">III</span>
+            <svg class="pillar__icon" aria-hidden="true"><use href="#i-hourglass"/></svg>
+            <h3 class="pillar__title">Momento</h3>
+            <p class="pillar__text">Porque café também é sobre o tempo que você dedica a si mesmo.</p>
+            <span class="pillar__line" aria-hidden="true"></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 08 — CARDÁPIO -->
+    <section class="menu section section--tint" id="cardapio" data-nav-theme="light" aria-labelledby="menu-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="label" data-reveal>Cardápio</p>
+          <h2 class="heading" id="menu-title" data-split>O que vai para sua mesa?</h2>
+          <p class="section-head__lead" data-reveal>Uma seleção pensada para acompanhar cada momento do seu dia.</p>
+        </header>
+
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Categorias do cardápio" data-reveal>
+            <button class="tabs__tab is-active" type="button" role="tab" id="tab-cafes" aria-controls="panel-cafes" aria-selected="true">Cafés</button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-brunch" aria-controls="panel-brunch" aria-selected="false" tabindex="-1">Brunch</button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-confeitaria" aria-controls="panel-confeitaria" aria-selected="false" tabindex="-1">Confeitaria</button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-bebidas" aria-controls="panel-bebidas" aria-selected="false" tabindex="-1">Bebidas</button>
+            <span class="tabs__indicator" aria-hidden="true"></span>
+          </div>
+
+          <div class="tabs__panels">
+            <!-- Cafés -->
+            <div class="tabs__panel is-active" role="tabpanel" id="panel-cafes" aria-labelledby="tab-cafes" tabindex="0">
+              <ul class="products" role="list">
+                <li><button class="product" type="button" data-product data-category="Cafés" data-name="Espresso Native" data-desc="Café especial, intenso e equilibrado." data-price="R$ 8,90" data-img="assets/images/menu-espresso.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-espresso.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Espresso Native</span><span class="product__desc">Café especial, intenso e equilibrado.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 8,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Cafés" data-name="Cappuccino Native" data-desc="Espresso, leite vaporizado e espuma cremosa." data-price="R$ 13,90" data-img="assets/images/menu-cappuccino.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-cappuccino.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Cappuccino Native</span><span class="product__desc">Espresso, leite vaporizado e espuma cremosa.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 13,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Cafés" data-name="Flat White" data-desc="Espresso duplo e leite texturizado." data-price="R$ 15,90" data-img="assets/images/menu-flat-white.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-flat-white.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Flat White</span><span class="product__desc">Espresso duplo e leite texturizado.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 15,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Cafés" data-name="Cold Brew" data-desc="Extração lenta, refrescante e delicada." data-price="R$ 16,90" data-img="assets/images/menu-cold-brew.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-cold-brew.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Cold Brew</span><span class="product__desc">Extração lenta, refrescante e delicada.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 16,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+              </ul>
+            </div>
+
+            <!-- Brunch -->
+            <div class="tabs__panel" role="tabpanel" id="panel-brunch" aria-labelledby="tab-brunch" tabindex="0" hidden>
+              <ul class="products products--3" role="list">
+                <li><button class="product" type="button" data-product data-category="Brunch" data-name="Brunch Native" data-desc="Ovos, pão artesanal, frutas e café." data-price="R$ 34,90" data-img="assets/images/menu-brunch-native.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-brunch-native.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Brunch Native</span><span class="product__desc">Ovos, pão artesanal, frutas e café.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 34,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Brunch" data-name="Avocado Toast" data-desc="Pão artesanal, avocado, ovos e ervas." data-price="R$ 29,90" data-img="assets/images/menu-avocado-toast.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-avocado-toast.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Avocado Toast</span><span class="product__desc">Pão artesanal, avocado, ovos e ervas.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 29,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Brunch" data-name="Croissant Native" data-desc="Croissant artesanal com recheio da casa." data-price="R$ 21,90" data-img="assets/images/menu-croissant.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-croissant.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Croissant Native</span><span class="product__desc">Croissant artesanal com recheio da casa.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 21,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+              </ul>
+            </div>
+
+            <!-- Confeitaria -->
+            <div class="tabs__panel" role="tabpanel" id="panel-confeitaria" aria-labelledby="tab-confeitaria" tabindex="0" hidden>
+              <ul class="products products--3" role="list">
+                <li><button class="product" type="button" data-product data-category="Confeitaria" data-name="Cinnamon Roll" data-desc="Massa macia, canela e cobertura cremosa." data-price="R$ 14,90" data-img="assets/images/menu-cinnamon-roll.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-cinnamon-roll.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Cinnamon Roll</span><span class="product__desc">Massa macia, canela e cobertura cremosa.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 14,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Confeitaria" data-name="Cheesecake Native" data-desc="Cheesecake cremoso com frutas vermelhas." data-price="R$ 18,90" data-img="assets/images/menu-cheesecake.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-cheesecake.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Cheesecake Native</span><span class="product__desc">Cheesecake cremoso com frutas vermelhas.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 18,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Confeitaria" data-name="Brownie" data-desc="Chocolate intenso e textura macia." data-price="R$ 13,90" data-img="assets/images/menu-brownie.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-brownie.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Brownie</span><span class="product__desc">Chocolate intenso e textura macia.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 13,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+              </ul>
+            </div>
+
+            <!-- Bebidas -->
+            <div class="tabs__panel" role="tabpanel" id="panel-bebidas" aria-labelledby="tab-bebidas" tabindex="0" hidden>
+              <ul class="products products--3" role="list">
+                <li><button class="product" type="button" data-product data-category="Bebidas" data-name="Matcha Latte" data-desc="Matcha e leite vaporizado, suave e equilibrado." data-price="R$ 17,90" data-img="assets/images/menu-matcha-latte.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-matcha-latte.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Matcha Latte</span><span class="product__desc">Matcha e leite vaporizado, suave e equilibrado.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 17,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Bebidas" data-name="Chocolate quente" data-desc="Chocolate cremoso, servido bem quente." data-price="R$ 15,90" data-img="assets/images/menu-hot-chocolate.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-hot-chocolate.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Chocolate quente</span><span class="product__desc">Chocolate cremoso, servido bem quente.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 15,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+                <li><button class="product" type="button" data-product data-category="Bebidas" data-name="Chá artesanal" data-desc="Seleção de chás e infusões da casa." data-price="R$ 11,90" data-img="assets/images/menu-tea.webp">
+                  <span class="product__media media media--1x1"><img src="assets/images/menu-tea.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></span>
+                  <span class="product__body"><span class="product__name">Chá artesanal</span><span class="product__desc">Seleção de chás e infusões da casa.</span></span>
+                  <span class="product__foot"><span class="product__price">R$ 11,90</span><svg class="product__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                </button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu__footer" data-reveal>
+          <p class="menu__note">Toque em um item para ver os detalhes. Cardápio completo disponível na casa.</p>
+          <a class="btn btn--primary" href="#localizacao">
+            <span class="btn__label">Como chegar</span>
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 — PRODUTO DESTAQUE -->
+    <section class="signature" data-nav-theme="light" aria-labelledby="signature-title">
+      <div class="signature__grid container">
+        <div class="signature__content" data-parallax="0.05">
+          <p class="label" data-reveal>Native Signature</p>
+          <h2 class="heading signature__title" id="signature-title" data-split>O favorito da casa.</h2>
+          <div class="signature__product" data-reveal>
+            <h3 class="signature__name">Brunch Native</h3>
+            <p class="signature__desc">O equilíbrio entre sabor, frescor e aquele café que faz você querer ficar.</p>
+          </div>
+          <ul class="signature__tags" role="list" data-reveal>
+            <li>Ovos</li><li>Pão artesanal</li><li>Frutas</li><li>Café</li>
+          </ul>
+          <div class="signature__buy" data-reveal>
+            <p class="signature__price"><span class="signature__currency">R$</span> 34,90</p>
+            <a class="btn btn--primary" href="#cardapio">
+              <span class="btn__label">Ver o cardápio</span>
+              <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="signature__visual">
+          <figure class="media media--4x5 signature__media" data-reveal="clip">
+            <img src="assets/images/signature.webp" alt="Brunch Native: pão artesanal, ovos pochê, avocado, frutas frescas e café" width="1600" height="2000" loading="lazy" decoding="async" data-parallax="-0.08">
+          </figure>
+          <p class="signature__badge" aria-hidden="true" data-parallax="0.12">
+            <svg><use href="#cn-symbol"/></svg>
+            <span>Feito na hora</span>
+          </p>
+          <span class="signature__ring" aria-hidden="true" data-parallax="0.18"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 — FIQUE MAIS UM POUCO -->
+    <section class="stay" data-nav-theme="dark" aria-labelledby="stay-title">
+      <div class="stay__media">
+        <img src="assets/images/stay.webp" alt="Salão aconchegante com poltronas, plantas, livros e luz quente da tarde" width="2400" height="1350" loading="lazy" decoding="async" data-parallax="-0.12" data-zoom>
+      </div>
+      <div class="stay__veil" aria-hidden="true"></div>
+      <div class="stay__content container">
+        <h2 class="display stay__title" id="stay-title" data-split>Fique mais um pouco.</h2>
+        <p class="stay__text" data-reveal>Tem dias em que tudo o que você precisa é de uma mesa tranquila, um café quente e algumas horas sem pressa.</p>
+        <p class="label label--light stay__label" data-reveal>Casa Native — Vila Madalena</p>
+      </div>
+    </section>
+
+    <!-- 11 — GALERIA -->
+    <section class="gallery section" id="galeria" data-nav-theme="light" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="label" data-reveal>Galeria</p>
+            <h2 class="heading" id="gallery-title" data-split>Um pouco da Casa Native.</h2>
+          </div>
+          <p class="section-head__aside" data-reveal>Clique em uma imagem para ampliar. Use as setas do teclado para navegar.</p>
+        </header>
+
+        <ul class="gallery__grid" role="list">
+          <li class="gallery__item gallery__item--a" data-reveal="clip">
+            <button class="gallery__btn" type="button" data-lightbox="0" data-cursor="view" aria-label="Ampliar imagem: Latte art">
+              <img src="assets/images/gallery-01.webp" alt="Mãos segurando um cappuccino com latte art sobre guardanapo de linho" width="1200" height="1500" loading="lazy" decoding="async" data-parallax="-0.04">
+              <span class="gallery__caption"><span>Latte art</span><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </button>
+          </li>
+          <li class="gallery__item gallery__item--b" data-reveal="clip">
+            <button class="gallery__btn" type="button" data-lightbox="1" data-cursor="view" aria-label="Ampliar imagem: O balcão">
+              <img src="assets/images/gallery-02.webp" alt="Vitrine da confeitaria com croissants, tortas e bolos, e a barista ao fundo" width="1800" height="1200" loading="lazy" decoding="async">
+              <span class="gallery__caption"><span>O balcão</span><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </button>
+          </li>
+          <li class="gallery__item gallery__item--c" data-reveal="clip">
+            <button class="gallery__btn" type="button" data-lightbox="2" data-cursor="view" aria-label="Ampliar imagem: O salão">
+              <img src="assets/images/gallery-03.webp" alt="Mesas de madeira vazias junto à janela, com vaso de flores secas e luz dourada" width="1800" height="1200" loading="lazy" decoding="async">
+              <span class="gallery__caption"><span>O salão</span><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </button>
+          </li>
+          <li class="gallery__item gallery__item--d" data-reveal="clip">
+            <button class="gallery__btn" type="button" data-lightbox="3" data-cursor="view" aria-label="Ampliar imagem: Confeitaria">
+              <img src="assets/images/gallery-04.webp" alt="Fatia de cheesecake com frutas vermelhas sendo cortada com o garfo" width="1200" height="1500" loading="lazy" decoding="async" data-parallax="-0.04">
+              <span class="gallery__caption"><span>Confeitaria</span><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </button>
+          </li>
+          <li class="gallery__item gallery__item--e" data-reveal="clip">
+            <button class="gallery__btn" type="button" data-lightbox="4" data-cursor="view" aria-label="Ampliar imagem: Mãos do barista">
+              <img src="assets/images/gallery-05.webp" alt="Flat white com latte art ao lado de um rolinho de canela sobre mesa de pedra" width="1200" height="1200" loading="lazy" decoding="async">
+              <span class="gallery__caption"><span>Mãos do barista</span><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </button>
+          </li>
+          <li class="gallery__item gallery__item--f" data-reveal="clip">
+            <button class="gallery__btn" type="button" data-lightbox="5" data-cursor="view" aria-label="Ampliar imagem: A fachada">
+              <img src="assets/images/gallery-06.webp" alt="Salão da Casa Native com mesas de madeira, plantas e luminárias pendentes" width="1800" height="1000" loading="lazy" decoding="async">
+              <span class="gallery__caption"><span>A fachada</span><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 12 — AMBIENTE / EXPERIÊNCIAS -->
+    <section class="ambiance section section--dark" data-nav-theme="dark" aria-labelledby="ambiance-title">
+      <div class="ambiance__grid container">
+        <div class="ambiance__content">
+          <p class="label label--light" data-reveal>Ambiente</p>
+          <h2 class="heading ambiance__title" id="ambiance-title" data-split>Mais do que um café.</h2>
+
+          <ul class="ambiance__list" role="list">
+            <li><button class="ambiance__item is-active" type="button" data-ambiance="0" aria-pressed="true">
+              <span class="ambiance__icon" aria-hidden="true"><svg><use href="#i-laptop"/></svg></span>
+              <span class="ambiance__body"><span class="ambiance__name">Trabalhe</span><span class="ambiance__text">Wi-Fi, mesas confortáveis e um ambiente tranquilo.</span></span>
+              <span class="ambiance__num" aria-hidden="true">01</span>
+            </button></li>
+            <li><button class="ambiance__item" type="button" data-ambiance="1" aria-pressed="false">
+              <span class="ambiance__icon" aria-hidden="true"><svg><use href="#i-chat"/></svg></span>
+              <span class="ambiance__body"><span class="ambiance__name">Encontre</span><span class="ambiance__text">Um lugar para conversar sem pressa.</span></span>
+              <span class="ambiance__num" aria-hidden="true">02</span>
+            </button></li>
+            <li><button class="ambiance__item" type="button" data-ambiance="2" aria-pressed="false">
+              <span class="ambiance__icon" aria-hidden="true"><svg><use href="#i-cup"/></svg></span>
+              <span class="ambiance__body"><span class="ambiance__name">Desacelere</span><span class="ambiance__text">Uma pausa no meio do dia.</span></span>
+              <span class="ambiance__num" aria-hidden="true">03</span>
+            </button></li>
+            <li><button class="ambiance__item" type="button" data-ambiance="3" aria-pressed="false">
+              <span class="ambiance__icon" aria-hidden="true"><svg><use href="#i-sparkle"/></svg></span>
+              <span class="ambiance__body"><span class="ambiance__name">Celebre</span><span class="ambiance__text">Momentos que merecem ser lembrados.</span></span>
+              <span class="ambiance__num" aria-hidden="true">04</span>
+            </button></li>
+          </ul>
+        </div>
+
+        <div class="ambiance__stage" data-reveal="clip">
+          <figure class="media media--4x5 ambiance__media">
+            <img class="ambiance__img is-active" src="assets/images/ambiance-work.webp" alt="Mulher trabalhando no notebook em uma mesa de madeira, com café e caderno" width="1200" height="1500" loading="lazy" decoding="async">
+            <img class="ambiance__img" src="assets/images/ambiance-meet.webp" alt="Três amigas rindo e dividindo croissants e cafés à mesa" width="1200" height="1500" loading="lazy" decoding="async">
+            <img class="ambiance__img" src="assets/images/ambiance-slow.webp" alt="Mulher lendo um livro em uma poltrona de couro, com uma xícara ao lado" width="1200" height="1500" loading="lazy" decoding="async">
+            <img class="ambiance__img" src="assets/images/ambiance-celebrate.webp" alt="Pequeno bolo com uma vela acesa sobre a mesa, em uma comemoração íntima" width="1200" height="1500" loading="lazy" decoding="async">
+          </figure>
+          <p class="ambiance__caption" aria-live="polite"><span data-ambiance-label>Trabalhe</span> — Casa Native</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 — DEPOIMENTOS -->
+    <section class="testimonials section" data-nav-theme="light" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="label" data-reveal>Depoimentos</p>
+            <h2 class="heading" id="testimonials-title" data-split>Quem passa, fica.</h2>
+          </div>
+          <div class="carousel-controls" data-reveal>
+            <button class="icon-btn" type="button" data-carousel-prev aria-label="Depoimento anterior"><svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <button class="icon-btn icon-btn--flip" type="button" data-carousel-next aria-label="Próximo depoimento"><svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          </div>
+        </header>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <ul class="carousel__track" role="list" tabindex="0" aria-label="Depoimentos — deslize para ver mais">
+          <li class="quote-card">
+            <svg class="quote-card__mark" aria-hidden="true"><use href="#i-leaf"/></svg>
+            <blockquote class="quote-card__text">“O café é incrível, mas o ambiente faz a gente querer voltar.”</blockquote>
+            <p class="quote-card__author"><span class="quote-card__avatar" aria-hidden="true">M</span><span><strong>Marina</strong> São Paulo</span></p>
+          </li>
+          <li class="quote-card">
+            <svg class="quote-card__mark" aria-hidden="true"><use href="#i-leaf"/></svg>
+            <blockquote class="quote-card__text">“Perfeito para passar a manhã com calma.”</blockquote>
+            <p class="quote-card__author"><span class="quote-card__avatar" aria-hidden="true">L</span><span><strong>Lucas</strong> Vila Madalena</span></p>
+          </li>
+          <li class="quote-card">
+            <svg class="quote-card__mark" aria-hidden="true"><use href="#i-leaf"/></svg>
+            <blockquote class="quote-card__text">“O brunch virou meu programa de sábado.”</blockquote>
+            <p class="quote-card__author"><span class="quote-card__avatar" aria-hidden="true">C</span><span><strong>Camila</strong> São Paulo</span></p>
+          </li>
+          <li class="quote-card">
+            <svg class="quote-card__mark" aria-hidden="true"><use href="#i-leaf"/></svg>
+            <blockquote class="quote-card__text">“Trabalho daqui algumas tardes por semana. Silêncio, café bom e ninguém com pressa.”</blockquote>
+            <p class="quote-card__author"><span class="quote-card__avatar" aria-hidden="true">B</span><span><strong>Beatriz</strong> Pinheiros</span></p>
+          </li>
+          <li class="quote-card">
+            <svg class="quote-card__mark" aria-hidden="true"><use href="#i-leaf"/></svg>
+            <blockquote class="quote-card__text">“Aquele cinnamon roll com flat white resolve qualquer segunda-feira.”</blockquote>
+            <p class="quote-card__author"><span class="quote-card__avatar" aria-hidden="true">R</span><span><strong>Rafael</strong> São Paulo</span></p>
+          </li>
+        </ul>
+        <div class="carousel__dots container" role="group" aria-label="Escolher depoimento"></div>
+      </div>
+      <p class="container fineprint" data-reveal>Depoimentos fictícios — parte do projeto conceitual.</p>
+    </section>
+
+    <!-- FAQ (apoio à decisão antes da visita) -->
+    <section class="faq section section--tint" data-nav-theme="light" aria-labelledby="faq-title">
+      <div class="faq__grid container">
+        <header class="faq__head">
+          <p class="label" data-reveal>Dúvidas</p>
+          <h2 class="heading" id="faq-title" data-split>Antes de vir.</h2>
+          <p class="section-head__lead" data-reveal>Tudo o que você precisa saber para aproveitar a visita.</p>
+        </header>
+        <div class="accordion" data-accordion>
+          <div class="accordion__item" data-reveal>
+            <h3 class="accordion__heading"><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">Preciso agendar antes de ir?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button></h3>
+            <div class="accordion__panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div class="accordion__inner"><p>Não. Atendemos por ordem de chegada, sem necessidade de reserva.</p></div></div>
+          </div>
+          <div class="accordion__item" data-reveal>
+            <h3 class="accordion__heading"><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">A Casa Native oferece brunch?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button></h3>
+            <div class="accordion__panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div class="accordion__inner"><p>Sim. Nosso cardápio inclui opções de brunch preparadas na hora.</p></div></div>
+          </div>
+          <div class="accordion__item" data-reveal>
+            <h3 class="accordion__heading"><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Posso trabalhar no espaço?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button></h3>
+            <div class="accordion__panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div class="accordion__inner"><p>Sim. O ambiente foi pensado também para quem busca um lugar tranquilo para trabalhar ou estudar.</p></div></div>
+          </div>
+          <div class="accordion__item" data-reveal>
+            <h3 class="accordion__heading"><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">Vocês possuem opções de bebidas sem café?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button></h3>
+            <div class="accordion__panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div class="accordion__inner"><p>Sim. O cardápio inclui bebidas como matcha, chocolate quente e chás.</p></div></div>
+          </div>
+          <div class="accordion__item" data-reveal>
+            <h3 class="accordion__heading"><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Onde fica a Casa Native?<span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button></h3>
+            <div class="accordion__panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div class="accordion__inner"><p>Rua das Flores, 247 — Vila Madalena, São Paulo/SP.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15 — INSTAGRAM -->
+    <section class="instagram section" data-nav-theme="light" aria-labelledby="instagram-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="label" data-reveal>Instagram</p>
+            <h2 class="heading" id="instagram-title" data-split>@casanative.cafe</h2>
+            <p class="section-head__lead" data-reveal>Um pouco mais da nossa rotina.</p>
+          </div>
+          <a class="btn btn--outline" href="#" data-instagram-link data-reveal>
+            <svg class="btn__icon btn__icon--lead" aria-hidden="true"><use href="#i-instagram"/></svg>
+            <span class="btn__label">Ver no Instagram</span>
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </header>
+
+        <ul class="insta-grid" role="list">
+          <li data-reveal><a class="insta-tile" href="#" data-instagram-link aria-label="Publicação 1 de @casanative.cafe"><img src="assets/images/instagram-01.webp" alt="" width="1080" height="1080" loading="lazy" decoding="async"><span class="insta-tile__overlay"><svg aria-hidden="true"><use href="#i-instagram"/></svg></span></a></li>
+          <li data-reveal><a class="insta-tile" href="#" data-instagram-link aria-label="Publicação 2 de @casanative.cafe"><img src="assets/images/instagram-02.webp" alt="" width="1080" height="1080" loading="lazy" decoding="async"><span class="insta-tile__overlay"><svg aria-hidden="true"><use href="#i-instagram"/></svg></span></a></li>
+          <li data-reveal><a class="insta-tile" href="#" data-instagram-link aria-label="Publicação 3 de @casanative.cafe"><img src="assets/images/instagram-03.webp" alt="" width="1080" height="1080" loading="lazy" decoding="async"><span class="insta-tile__overlay"><svg aria-hidden="true"><use href="#i-instagram"/></svg></span></a></li>
+          <li data-reveal><a class="insta-tile" href="#" data-instagram-link aria-label="Publicação 4 de @casanative.cafe"><img src="assets/images/instagram-04.webp" alt="" width="1080" height="1080" loading="lazy" decoding="async"><span class="insta-tile__overlay"><svg aria-hidden="true"><use href="#i-instagram"/></svg></span></a></li>
+          <li data-reveal><a class="insta-tile" href="#" data-instagram-link aria-label="Publicação 5 de @casanative.cafe"><img src="assets/images/instagram-05.webp" alt="" width="1080" height="1080" loading="lazy" decoding="async"><span class="insta-tile__overlay"><svg aria-hidden="true"><use href="#i-instagram"/></svg></span></a></li>
+          <li data-reveal><a class="insta-tile" href="#" data-instagram-link aria-label="Publicação 6 de @casanative.cafe"><img src="assets/images/instagram-06.webp" alt="" width="1080" height="1080" loading="lazy" decoding="async"><span class="insta-tile__overlay"><svg aria-hidden="true"><use href="#i-instagram"/></svg></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 16 — LOCALIZAÇÃO -->
+    <section class="location section section--tint" id="localizacao" data-nav-theme="light" aria-labelledby="location-title">
+      <div class="location__grid container">
+        <div class="location__map" data-reveal="clip">
+          <!-- Mapa estilizado (mockup): a localização é fictícia -->
+          <svg class="map" viewBox="0 0 640 520" role="img" aria-label="Mapa ilustrativo da Vila Madalena com a localização conceitual da Casa Native">
+            <rect width="640" height="520" class="map__bg"/>
+            <path class="map__park" d="M430 330c40-18 92-10 120 22 22 26 8 70-30 82-46 14-104 0-118-36-10-26 4-54 28-68Z"/>
+            <g class="map__streets map__streets--minor">
+              <path d="M-10 120 L650 70"/><path d="M-10 230 L650 200"/><path d="M-10 420 L650 380"/>
+              <path d="M120 -10 L170 530"/><path d="M380 -10 L350 530"/><path d="M560 -10 L520 530"/>
+              <path d="M40 -10 C120 160 60 320 160 530"/>
+            </g>
+            <g class="map__streets map__streets--major">
+              <path d="M-10 320 C160 300 320 330 650 280"/>
+              <path d="M250 -10 C270 160 230 340 280 530"/>
+            </g>
+            <text class="map__label" x="470" y="282" transform="rotate(-5 470 282)">R. DAS FLORES</text>
+            <text class="map__label" x="210" y="120" transform="rotate(84 210 120)">AV. CONCEITO</text>
+            <text class="map__label map__label--area" x="70" y="470">VILA MADALENA</text>
+            <g class="map__pin" transform="translate(262 312)">
+              <circle class="map__pulse" r="18"/>
+              <circle class="map__dot" r="9"/>
+            </g>
+            <g class="map__tag" transform="translate(286 238)">
+              <rect width="164" height="48" rx="4"/>
+              <text x="16" y="21" class="map__tag-title">CASA NATIVE</text>
+              <text x="16" y="37" class="map__tag-sub">Rua das Flores, 247</text>
+            </g>
+          </svg>
+          <p class="map__note">Mapa ilustrativo — localização conceitual.</p>
+        </div>
+
+        <div class="location__info">
+          <p class="label" data-reveal>Localização</p>
+          <h2 class="heading" id="location-title" data-split>Encontre seu novo lugar favorito.</h2>
+
+          <address class="location__address" data-reveal>
+            <svg aria-hidden="true"><use href="#i-pin"/></svg>
+            <span>Rua das Flores, 247<br>Vila Madalena — São Paulo/SP</span>
+          </address>
+
+          <dl class="hours" data-reveal>
+            <div class="hours__row" data-days="1-5">
+              <dt>Segunda — Sexta</dt>
+              <dd>08h — 20h</dd>
+            </div>
+            <div class="hours__row" data-days="0,6">
+              <dt>Sábado — Domingo</dt>
+              <dd>08h — 22h</dd>
+            </div>
+          </dl>
+
+          <p class="location__status" data-open-badge data-reveal><span class="status-dot" aria-hidden="true"></span><span data-open-text>Horário de funcionamento</span></p>
+
+          <a class="btn btn--primary" href="#" data-map-link target="_blank" rel="noopener" data-reveal>
+            <span class="btn__label">Abrir no mapa</span>
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17 — CTA FINAL -->
+    <section class="final-cta" data-nav-theme="dark" aria-labelledby="final-title">
+      <svg class="final-cta__symbol" aria-hidden="true" data-parallax="0.1"><use href="#cn-symbol"/></svg>
+      <div class="final-cta__content container">
+        <svg class="final-cta__mark" aria-hidden="true"><use href="#cn-symbol"/></svg>
+        <h2 class="display final-cta__title" id="final-title" data-split>Até o próximo café.</h2>
+        <p class="final-cta__text" data-reveal>Seu próximo momento começa aqui.</p>
+        <div class="final-cta__actions" data-reveal>
+          <a class="btn btn--accent" href="#localizacao" data-magnetic>
+            <span class="btn__label">Como chegar</span>
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--outline btn--on-dark" href="#cardapio">
+            <span class="btn__label">Explorar cardápio</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 18 — FOOTER -->
+  <footer class="footer" data-nav-theme="dark" id="contato">
+    <div class="container">
+      <div class="footer__top">
+        <a class="footer__brand" href="#inicio" aria-label="Casa Native — voltar ao início">
+          <svg class="footer__symbol" aria-hidden="true"><use href="#cn-symbol"/></svg>
+          <span class="footer__wordmark"><span>Casa</span>Native</span>
+          <span class="footer__tagline">Café • Brunch • Confeitaria</span>
+        </a>
+
+        <nav class="footer__col" aria-label="Links do rodapé">
+          <h2 class="footer__title">Navegue</h2>
+          <ul role="list">
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#cardapio">Cardápio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#localizacao">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <h2 class="footer__title">Visite</h2>
+          <address>Rua das Flores, 247<br>Vila Madalena — São Paulo/SP</address>
+          <p>Segunda a sexta: 08h–20h<br>Sábado e domingo: 08h–22h</p>
+        </div>
+
+        <div class="footer__col">
+          <h2 class="footer__title">Acompanhe</h2>
+          <ul class="footer__social" role="list">
+            <li><a href="#" data-instagram-link><svg aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a></li>
+            <li><a href="#" data-whatsapp-link><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer__giant" aria-hidden="true">Casa Native</p>
+
+      <div class="footer__bottom">
+        <p>© 2026 Casa Native</p>
+        <p class="footer__disclaimer">Projeto conceitual fictício desenvolvido para demonstração de portfólio.</p>
+        <a class="footer__top-link" href="#inicio">Voltar ao topo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante de WhatsApp -->
+  <a class="whatsapp-fab" href="#" data-whatsapp-link aria-label="Fale conosco pelo WhatsApp">
+    <svg aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <!-- Modal de produto -->
+  <dialog class="modal modal--product" id="product-modal" aria-labelledby="pm-name">
+    <div class="modal__panel">
+      <button class="modal__close icon-btn" type="button" data-close aria-label="Fechar detalhes do produto"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+      <figure class="media media--1x1 modal__media"><img id="pm-img" src="" alt="" width="900" height="900"></figure>
+      <div class="modal__body">
+        <p class="label" id="pm-category"></p>
+        <h2 class="modal__title" id="pm-name"></h2>
+        <p class="modal__desc" id="pm-desc"></p>
+        <p class="modal__price" id="pm-price"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Lightbox da galeria -->
+  <dialog class="lightbox" id="lightbox" aria-label="Galeria ampliada">
+    <div class="lightbox__inner">
+      <div class="lightbox__bar">
+        <p class="lightbox__counter"><span data-lb-index>1</span> / <span data-lb-total>6</span></p>
+        <button class="icon-btn icon-btn--light" type="button" data-close aria-label="Fechar galeria"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <figure class="lightbox__figure">
+        <img class="lightbox__img" src="" alt="">
+        <figcaption class="lightbox__caption"></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--prev icon-btn icon-btn--light" type="button" data-lb-prev aria-label="Imagem anterior"><svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+      <button class="lightbox__nav lightbox__nav--next icon-btn icon-btn--light icon-btn--flip" type="button" data-lb-next aria-label="Próxima imagem"><svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+  </dialog>
+
+  <!-- Toast de feedback -->
+  <div class="toast" role="status" aria-live="polite" hidden><span class="toast__text"></span></div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+  <script src="js/interactions.js" defer></script>
+</body>
+</html>
