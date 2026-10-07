@@ -51,7 +51,7 @@ Nenhuma biblioteca externa foi necessária: todas as interações foram constru�
 - Cursor personalizado e botões magnéticos (somente desktop)
 - Microinterações em botões, links, cards, abas, formulário e menu
 - Textura *grain* sutil
-- SEO (title, description, Open Graph, favicon, dados estruturados, um único H1)
+- SEO (title, description, Open Graph, dados estruturados, um único H1)
 - Acessibilidade (HTML semântico, foco visível, ARIA, ESC em modais e menu, foco preso e devolvido, `prefers-reduced-motion`)
 
 ## Screenshots
@@ -86,7 +86,7 @@ casa-native/
 ├── assets/
 │   ├── images/            # fotografias 
 │   ├── icons/
-│   └── logo/              # logo, símbolo, versões clara/escura, favicons
+│   └── logo/              # logo, símbolo e versões clara/escura
 ├── docs/screenshots/
 ├── README.md
 └── LICENSE
